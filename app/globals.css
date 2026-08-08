@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@tailwind utilities;
+
+:root {
+  /* 預設的主色 (例如你的 Portfolio 首頁主色) */
+  --primary-color: #B44363; 
+}
+
+@layer utilities {
+  .bg-primary { background-color: var(--primary-color); }
+  .text-primary { color: var(--primary-color); }
+  .border-primary { border-color: var(--primary-color); }
+  /* 用於邊框陰影的輔助色 */
+  .shadow-primary { box-shadow: 8px 8px 0px 0px var(--primary-color); }
+}
+
+:root {
+  --background: #F5EFE6;
+  --foreground: #494949;
+  --card: #F5EFE6;
+  --card-foreground: #494949;
+  --popover: #F5EFE6;
+  --popover-foreground: #494949;
+  --primary: #B44363;
+  --primary-foreground: #F5EFE6;
+  --secondary: #F5EFE6;
+  --secondary-foreground: #494949;
+  --muted: #E8E2D9;
+  --muted-foreground: #6B6B6B;
+  --accent: #B44363;
+  --accent-foreground: #F5EFE6;
+  --destructive: #DC2626;
+  --destructive-foreground: #F5EFE6;
+  --border: #494949;
+  --input: #494949;
+  --ring: #B44363;
+  --chart-1: #B44363;
+  --chart-2: #494949;
+  --chart-3: #6B6B6B;
+  --chart-4: #E8E2D9;
+  --chart-5: #F5EFE6;
+  --radius: 0.75rem;
+  --sidebar: #F5EFE6;
+  --sidebar-foreground: #494949;
+  --sidebar-primary: #B44363;
+  --sidebar-primary-foreground: #F5EFE6;
+  --sidebar-accent: #E8E2D9;
+  --sidebar-accent-foreground: #494949;
+  --sidebar-border: #494949;
+  --sidebar-ring: #B44363;
+}
+
+.dark {
+  --background: #1A1A1A;
+  --foreground: #F5EFE6;
+  --card: #1A1A1A;
+  --card-foreground: #F5EFE6;
+  --popover: #1A1A1A;
+  --popover-foreground: #F5EFE6;
+  --primary: #B44363;
+  --primary-foreground: #F5EFE6;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #F5EFE6;
+  --muted: #2A2A2A;
+  --muted-foreground: #A0A0A0;
+  --accent: #B44363;
+  --accent-foreground: #F5EFE6;
+  --destructive: #DC2626;
+  --destructive-foreground: #F5EFE6;
+  --border: #494949;
+  --input: #494949;
+  --ring: #B44363;
+  --chart-1: #B44363;
+  --chart-2: #F5EFE6;
+  --chart-3: #A0A0A0;
+  --chart-4: #2A2A2A;
+  --chart-5: #1A1A1A;
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F5EFE6;
+  --sidebar-primary: #B44363;
+  --sidebar-primary-foreground: #F5EFE6;
+  --sidebar-accent: #2A2A2A;
+  --sidebar-accent-foreground: #F5EFE6;
+  --sidebar-border: #494949;
+  --sidebar-ring: #B44363;
+}
+
+@theme inline {
+  --font-sans: 'Montserrat', 'Montserrat Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@keyframes wave-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

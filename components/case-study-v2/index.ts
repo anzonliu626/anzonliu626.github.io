@@ -1,0 +1,8 @@
+export { HeroSection } from "./hero-section"
+export { OverviewSection } from "./overview-section"
+export { ProblemSection } from "./problem-section"
+export { ResearchStrategySection } from "./research-strategy-section"
+export { StrategyIdeationSection } from "./strategy-ideation-section"
+export { DesignSolutionSection } from "./design-solution-section"
+export { ImpactSection } from "./impact-section"
+export { ImagePlaceholder } from "./image-placeholder"
