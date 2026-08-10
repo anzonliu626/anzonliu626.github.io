@@ -153,11 +153,11 @@ export default function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
+                className="grid grid-cols-2 gap-3 sm:gap-6"
               >
                 {visible.length > 0 ? (
                   visible.map((project, index) => (
-                    <div key={project.slug} className="min-h-[500px]">
+                    <div key={project.slug} className="min-h-[280px] sm:min-h-[380px] lg:min-h-[500px]">
                       <ProjectCard project={project} index={index} />
                     </div>
                   ))
