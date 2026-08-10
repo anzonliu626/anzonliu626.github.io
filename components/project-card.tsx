@@ -71,11 +71,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         )}
 
         {/* Card body */}
-        <div className="flex flex-col flex-1 p-6 gap-4">
+        <div className="flex flex-col flex-1 p-3 sm:p-6 gap-2 sm:gap-4">
           {/* Project number + arrow */}
           <div className="flex items-start justify-between">
             <span
-              className="text-xs font-mono font-semibold tracking-widest px-2 py-1 border-[2px] border-foreground rounded-md"
+              className="text-[10px] sm:text-xs font-mono font-semibold tracking-widest px-1.5 sm:px-2 py-0.5 sm:py-1 border-[2px] border-foreground rounded-md"
               style={{ color: project.primaryColor }}
             >
               PROJ {project.number}
@@ -83,37 +83,37 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <motion.span
               animate={arrowControls}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-9 h-9 flex items-center justify-center border-[2px] border-foreground rounded-lg bg-background"
+              className="w-7 h-7 sm:w-9 sm:h-9 flex items-center justify-center border-[2px] border-foreground rounded-lg bg-background"
               style={{ boxShadow: "3px 3px 0px 0px var(--foreground)" }}
               aria-hidden="true"
             >
-              <ArrowUpRight className="w-4 h-4 text-foreground" />
+              <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-foreground" />
             </motion.span>
           </div>
 
           {/* Title */}
-          <h3 className="text-xl font-black text-foreground leading-snug min-h-[3.5rem] line-clamp-2">
+          <h3 className="text-sm sm:text-xl font-black text-foreground leading-snug min-h-[2.5rem] sm:min-h-[3.5rem] line-clamp-2">
             {project.title}
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground leading-relaxed min-h-[4.5rem] line-clamp-3">
+          <p className="hidden sm:block text-sm text-muted-foreground leading-relaxed min-h-[4.5rem] line-clamp-3">
             {project.description}
           </p>
 
           {/* Tags + Year */}
-          <div className="flex flex-col gap-3 pt-2 border-t-[2px] border-foreground/20">
-            <div className="flex flex-wrap gap-2 min-h-[3.75rem] content-start">
-              {project.tags.map((tag) => (
+          <div className="flex flex-col gap-2 sm:gap-3 pt-2 border-t-[2px] border-foreground/20">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 min-h-[1.5rem] sm:min-h-[3.75rem] content-start">
+              {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium px-2 py-0.5 border-[2px] border-foreground rounded-full text-foreground"
+                  className="text-[10px] sm:text-xs font-medium px-1.5 sm:px-2 py-0.5 border-[2px] border-foreground rounded-full text-foreground"
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <span className="text-xs font-mono text-muted-foreground">{project.year}</span>
+            <span className="text-[10px] sm:text-xs font-mono text-muted-foreground">{project.year}</span>
           </div>
         </div>
       </Link>
