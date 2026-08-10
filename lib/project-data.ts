@@ -121,7 +121,7 @@ export const ALL_PROJECTS_DATA: Record<string, ProjectData> = {
       timeline: "3 Months",
       tools: "Figma, FigJam, Notion",
       primaryColor: "#2EA588",
-      tags: ["Web Redesign", "Design System", "UX Design"],
+      tags: ["Enterprise SaaS", "Onboarding Redesign", "Conversion Optimization"],
     },
 
     hero: {
@@ -339,7 +339,7 @@ export const ALL_PROJECTS_DATA: Record<string, ProjectData> = {
       timeline: "3 Months",
       tools: "Figma, FigJam, Adobe XD",
       primaryColor: "#BA55C9",
-      tags: ["Web Design", "Design System", "UX Design"],
+      tags: ["SaaS Platform", "Responsive Interaction Design", "Zero-to-One Product"],
     },
 
     hero: {
@@ -571,7 +571,7 @@ export const ALL_PROJECTS_DATA: Record<string, ProjectData> = {
       timeline: "12 Months",
       tools: "Figma, FigJam,Confluence, Jira",
       primaryColor: "#BE2026",
-      tags: ["App Redesign", "Web Redesign", "Design System", "UX Design"],
+      tags: ["GovTech & Form Digitalization", "Zero-to-One Product", "Onboarding Redesign"],
     },
 
     hero: {
@@ -794,7 +794,7 @@ export const ALL_PROJECTS_DATA: Record<string, ProjectData> = {
       timeline: "13 Months and More",
       tools: "Figma, FigJam,Confluence, Miro",
       primaryColor: "#1C4CD9",
-      tags: ["App/Web Revamp", "Design System", "UX Design", "Workshop"],
+      tags: ["Enterprise SaaS", "Lead UI/UX & Research", "Conversion Optimization",],
     },
 
     hero: {
@@ -1003,7 +1003,7 @@ export const ALL_PROJECTS_DATA: Record<string, ProjectData> = {
       timeline: "1 year",
       tools: "Figma, Miro, Maze, Claude/ChatGPT (UX Writing & Prompting), ProtoPie",
       primaryColor: "#2ECF96",
-      tags: ["App/Web Revamp", "Design System", "UX Design", "Workshop"],
+      tags: ["Fintech Mobile App", "Zero-to-One Product", "Usability Testing & Design System"],
     },
 
     hero: {
