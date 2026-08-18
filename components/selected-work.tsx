@@ -83,12 +83,12 @@ export function SelectedWork() {
         {/* Project grid */}
         <div
           id="work-grid"
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 scroll-mt-28"
+          className="grid grid-cols-2 gap-3 sm:gap-6 scroll-mt-28"
         >
           {featuredProjects.map((project, index) => (
             <div
               key={project.slug}
-              className="min-h-[500px]"
+              className="min-h-[280px] sm:min-h-[380px] lg:min-h-[500px]"
             >
               <ProjectCard project={project} index={index} />
             </div>
