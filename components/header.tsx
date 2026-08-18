@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
+import { useActiveSection } from "@/hooks/use-active-section"
 
 const hashLinks = [
   { label: "Work",       href: "#work"       },
@@ -10,9 +11,12 @@ const hashLinks = [
   { label: "Contact",    href: "#contact"    },
 ]
 
+const sectionIds = hashLinks.map((l) => l.href.replace("#", ""))
+
 export function Header() {
   const pathname = usePathname()
   const isHome = pathname === "/"
+  const activeId = useActiveSection(sectionIds, isHome)
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!isHome) return // let default navigation happen on non-home pages
@@ -42,20 +46,30 @@ export function Header() {
 
         <nav className="flex items-center gap-1 md:gap-2">
           {/* Hash-scroll links (work on home; fall back to full URL on other pages) */}
-          {hashLinks.map((link, index) => (
-            <motion.a
-              key={link.href}
-              href={isHome ? link.href : `/${link.href}`}
-              onClick={(e) => handleSmoothScroll(e, link.href)}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * (index + 1) + 0.3, duration: 0.4 }}
-              className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
-            >
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </motion.a>
-          ))}
+          {hashLinks.map((link, index) => {
+            const isActive = isHome && activeId === link.href.replace("#", "")
+            return (
+              <motion.a
+                key={link.href}
+                href={isHome ? link.href : `/${link.href}`}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                aria-current={isActive ? "true" : undefined}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * (index + 1) + 0.3, duration: 0.4 }}
+                className={`px-3 py-2 text-sm font-medium transition-colors relative group ${
+                  isActive ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-primary transition-transform origin-left ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </motion.a>
+            )
+          })}
         </nav>
       </div>
     </motion.header>
