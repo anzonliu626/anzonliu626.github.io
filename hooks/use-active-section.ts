@@ -24,7 +24,9 @@ export function useActiveSection(sectionIds: string[], enabled = true) {
       // Offset for the fixed header (~64-72px) plus a little breathing room.
       const marker = 120
 
-      let current = elements[0].id
+      // Empty by default: if the user is in a section that has no matching nav
+      // link (e.g. the hero above the first tracked section), nothing is active.
+      let current = ""
       for (const el of elements) {
         if (el.getBoundingClientRect().top - marker <= 0) {
           current = el.id
